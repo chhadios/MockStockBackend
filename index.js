@@ -32,7 +32,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors());
 
 // express.js routes
-
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 app.use('/stocks', stockRoutes);
 app.use('/user', userRoutes);
 app.use('/purchased', purchasedStockRoutes);
