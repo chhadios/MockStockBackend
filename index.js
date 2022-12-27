@@ -34,13 +34,12 @@ app.use(cors());
 // express.js routes
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
-
+});
 app.use('/stocks', stockRoutes);
 app.use('/user', userRoutes);
 app.use('/purchased', purchasedStockRoutes);
 app.use('/logs', actionLogRoutes);
 app.use('/transactions', transactionRoutes);
-});
 app.get('*', (req, res) => {
   res.status(404).sendFile(__dirname + '/not_found.html');
 });
